@@ -76,7 +76,164 @@ float("-inf")
 
 
 ## Arrays (Called Lists in Python)
-#
+arr = [1,2,3]
+print(arr)
+
+
+# Can be used as a stack as arrays in Python are dynamic
+arr.append(4) # pushed         0(1)
+arr.pop(4)   # popped          0(1)
+
+
+arr.insert(1, 7) # Insert Value 7 on Index 1 || But insering sth in middle of an array is O(n)
+
+# But index and change the value of an array
+arr[0] = 2 #                O(1)
+
+
+# Initialize arr of size n with default value of 1
+# n = 5 
+# arr = [1] * n
+
+# Size of an array can be found by  len(arr)
+
+
+arr[-1] # Last value of the array
+arr[-2] # Second last value of the array
+
+# Sublist (aka slicing an array)
+arr[1:3]  # Value of arr[1], arr[2]
+
+# Unpacking
+a, b, c = [1, 2, 3] 
+# Here a = 1, b = 2, c = 3
+
+#Looping through arrays
+for i in range (len(arr)) :
+       x = arr[i]
+
+       #Without index
+       for n in arr :
+             print (n)
+       ## When you write for n in arr:, Python is doing something very specific:
+       ##Iterating over the List: The for loop iterates over the list arr.
+       ##Assigning Each Element to the Variable n: During each iteration of the loop, the next element of the list arr is assigned to the variable n.
+
+       #With index and valuee
+
+       for i, n in enumerate(arr) :
+              print (i,n)
+
+              #How It Works
+              #The enumerate(arr) function generates pairs of (index, element) for each item in the list.
+              #During each iteration, i is assigned the index, and n is assigned the value of the current element from arr.
+              #The print(i, n) statement prints the index and value.
+
+
+
+       # Looping through Multiple arrays simultaneously
+       # with unpacking
+       nums1 = [1, 3, 5]
+       nums2 = [2,4,6]
+       for n1, n2 in zip(nums1, nums2) :
+              print(n1, n2)
+
+              """
+             
+
+### Explanation
+
+1. **Initialization**:
+   - `nums1 = [1, 3, 5]`: This is the first list.
+   - `nums2 = [2, 4, 6]`: This is the second list.
+
+2. **For Loop with `zip`**:
+   - `for n1, n2 in zip(nums1, nums2):`:
+     - The `zip` function is used to pair up elements from `nums1` and `nums2` into tuples.
+     - Each tuple contains one element from each list.
+     - `n1` and `n2` are used to unpack these tuples into individual variables.
+
+3. **Loop Body**:
+   - `print(n1, n2)`: This line prints the values of `n1` and `n2`.
+
+### How It Works
+
+- The `zip(nums1, nums2)` function combines the two lists element-wise into pairs (tuples).
+- During each iteration, `n1` is assigned the first element of the tuple (from `nums1`), and `n2` is assigned the second element of the tuple (from `nums2`).
+- The `print(n1, n2)` statement prints the paired values.
+
+### Step-by-Step Execution
+
+Let's go through the loop step by step for the lists `nums1 = [1, 3, 5]` and `nums2 = [2, 4, 6]`.
+
+1. **First Iteration**:
+   - The first pair from `zip(nums1, nums2)` is `(1, 2)`.
+   - `n1` is assigned the value `1` (from `nums1`).
+   - `n2` is assigned the value `2` (from `nums2`).
+   - `print(n1, n2)` prints `1 2`.
+
+2. **Second Iteration**:
+   - The second pair from `zip(nums1, nums2)` is `(3, 4)`.
+   - `n1` is assigned the value `3` (from `nums1`).
+   - `n2` is assigned the value `4` (from `nums2`).
+   - `print(n1, n2)` prints `3 4`.
+
+3. **Third Iteration**:
+   - The third pair from `zip(nums1, nums2)` is `(5, 6)`.
+   - `n1` is assigned the value `5` (from `nums1`).
+   - `n2` is assigned the value `6` (from `nums2`).
+   - `print(n1, n2)` prints `5 6`.
+
+After the third iteration, there are no more elements in `nums1` and `nums2`, so the loop ends.
+
+### Complete Example
+
+Here is the complete code with example lists:
+
+```python
+nums1 = [1, 3, 5]
+nums2 = [2, 4, 6]
+
+for n1, n2 in zip(nums1, nums2):
+    print(n1, n2)
+```
+
+When you run this code, it will output:
+
+```
+1 2
+3 4
+5 6
+```
+
+### Summary
+
+- The `zip` function allows you to combine multiple lists element-wise into tuples.
+- `for n1, n2 in zip(nums1, nums2):` means "for each pair of elements (one from `nums1` and one from `nums2`), assign the first element to `n1` and the second element to `n2`, and execute the following block of code."
+- This approach is useful when you need to process multiple lists in parallel.
+
+If you have any more questions or need further clarification, feel free to ask!
+              """
+
+
+
+# Reversing an arr
+arr.reverse() # reverses the array
+arr.sort()    # sorts the array (ascending by default) or alphabetical order if it's a string
+arr.sort(reverse=True) # sorts in Descending order
+
+# Custom sort ( by length of string )
+arr.sort (key=lambda x:len(x))
+
+"""
+key=lambda x: len(x) means that each element x in the list will be passed to the lambda function, which returns the length of x.
+"""
+
+
+
+
+
+
 
 
 
