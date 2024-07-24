@@ -308,6 +308,40 @@ queue.pop # right pop
 # At Queue, you can push and pop on both sides of the container
 
 
+# HashSet 
+# We can search values in constant time and we can insert values in constant time O(1)
+# There won't be any duplicates in our set unlike a list
+
+mySet = set()
+
+mySet.add(1)
+mySet.remove(2) # also in constant time
+
+# We can findout if a number exists in Hash Set by simply asking   number in mySet(set name)
+
+x = 1 in mySet
+y = 2 in mySet # Will either give True or False
+
+# We can convert a list/array to HashSet using
+
+mySet2 = set([1,2,4])
+
+#Set Comprehension
+
+mySet = { i for i in range(5)} # Similar to list comprehension
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
