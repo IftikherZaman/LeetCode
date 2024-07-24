@@ -429,8 +429,49 @@ x = ((1,2) in mySet)
 # Reason we use Tuple as List can't be keys as they are mutable
 
 
+##Heaps 
+
+import heapq
+# Heap is a common data structure to find the min and max of a set values frequently
+
+# under the hood , heaps are arrays
+minHeap = []
+
+heapq.heappush(minHeap, 3) # Pushed 3 to the array minHeap
+# Minimum value will always be at index 0 and that's how the heap is implemented
 
 
+while len(minHeap) :
+       print(heapq.heappop(minHeap))
+
+       # Min Heap = Hence, the smallest values will be popped first
+
+       # No max heap by default, work around is to use min heap and multiply -1 when push & pop
+
+       maxHeap = []
+       heapq.heappush(maxHeap , -3)
+
+       # Max is always index at 0
+
+       print (-1 * maxHeap[0])
+
+       while len(maxHeap) :
+              print (-1 * heapq.heappop(maxHeap))
+
+
+              #Priority Queue: Elements are prioritized based on their value, with the smallest value having the highest priority in a min-heap.
+              #Min-Heap: The smallest element is always at the root and will be popped first.
+
+# Build heap from initial values
+arr = [2,5,4]
+heapq.heapify(arr) # O(n) process
+
+while arr: # This means while the array is not empty.
+       print(heapq.heapify(arr)) 
+
+
+
+##Functions
 
 
 
