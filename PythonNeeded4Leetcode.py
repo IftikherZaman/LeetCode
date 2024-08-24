@@ -472,6 +472,69 @@ while arr: # This means while the array is not empty.
 
 
 ##Functions
+def myFunc(n,m) :
+       return n*m 
+
+myFunc(3,4) ;
+
+
+#Nested functions have access to outer variables
+
+def outer(a,b) :
+       c = "c"
+       def inner() :
+              return a + b + c 
+        return inner() ;
+# Can modify objects but not reassign unless using nonlocal keyword
+def double(arr, val) :
+       def helper1() :
+              # Modifying array works
+              for i, n in enumerate(arr) : 
+                     arr[i] *= 2
+
+                     # will only modify val in the helper scope
+                     # val *= 2
+
+                     # this will modify val outside helper scope
+
+                     nonlocal val 
+                     val *= 2 
+           helper1()
+print(arr, val)
+nums = [1,2]
+val = 3
+double (nums, val)
+
+
+
+#Class
+
+class MyClass : 
+       
+       # Constructor
+       def  __init__(self,nums) :
+              #Create member variables
+              self.nums = nums
+              self.size = len(nums)
+
+    
+
+       #self key word required as param 
+       def getLength(self) :
+              return self.size
+       
+       def getDoubleLength(self) :
+              return 2 * self.getLength()
+       
+
+
+
+
+
+       
+       
+       
+
 
 
 
