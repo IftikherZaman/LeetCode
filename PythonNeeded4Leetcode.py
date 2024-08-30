@@ -30,6 +30,11 @@ elif n ==2 :
         # or = ||   (logic Or)
 
 # While loops are similar
+i = 1
+while i <= 5:
+    print(i)
+    i += 1
+
 
 # For Loops
 for i in range(5) :

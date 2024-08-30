@@ -1,0 +1,49 @@
+No, slicing an array (or list) in Python does not make any permanent changes to the original array. Slicing creates a new list that contains the elements specified by the slice. The original array remains unchanged.
+
+### Example to Illustrate:
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+# Slicing the array up to index 3
+sliced_arr = arr[:3]
+
+print("Original array:", arr)
+print("Sliced array:", sliced_arr)
+```
+
+**Output**:
+```
+Original array: [1, 2, 3, 4, 5]
+Sliced array: [1, 2, 3]
+```
+
+### Explanation:
+
+- **Original Array (`arr`)**: `[1, 2, 3, 4, 5]`
+  - The original array remains unchanged.
+- **Sliced Array (`sliced_arr`)**: `[1, 2, 3]`
+  - This is a new list created from the slice. The original array is not modified.
+
+### Key Points:
+
+- **Slicing**: When you slice an array, you are creating a new list that contains the elements from the original list as specified by the slice.
+- **No Permanent Change**: The original array is not modified by slicing. If you need to modify the original array, you would have to explicitly assign the result back to it or modify it in another way.
+
+### Example of No Permanent Change:
+
+```python
+arr = [1, 2, 3, 4, 5]
+
+# Perform slicing but do not reassign
+_ = arr[:3]
+
+print("Array after slicing (without reassignment):", arr)
+```
+
+**Output**:
+```
+Array after slicing (without reassignment): [1, 2, 3, 4, 5]
+```
+
+As you can see, the original array remains `[1, 2, 3, 4, 5]` after slicing, demonstrating that slicing does not alter the original list.

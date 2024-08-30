@@ -1,0 +1,78 @@
+function fn(arr):
+    left = 0
+    for (int right = 0; right < arr.length; right++):
+        Do some logic to "add" element at arr[right] to window
+
+        while WINDOW_IS_INVALID:
+            Do some logic to "remove" element at arr[left] from window
+            left++
+
+        Do some logic to update the answer.
+
+
+
+
+
+        To remove the first element of an array (or list) in Python, you can use several methods. Here are the most common ones:
+
+### 1. Using `pop(0)`
+
+The `pop()` method removes and returns the element at the specified index. To remove the first element, you can use index `0`.
+
+```python
+arr = [1, 2, 3, 4, 5]
+first_element = arr.pop(0)
+print(arr)  # Output: [2, 3, 4, 5]
+print(first_element)  # Output: 1
+```
+
+- **Explanation**: `arr.pop(0)` removes the element at index `0` (the first element) and returns it.
+- **Time Complexity**: `O(n)` because removing the first element requires shifting all subsequent elements one position to the left.
+
+### 2. Using `del`
+
+The `del` statement can be used to delete an element at a specific index. To remove the first element, you would specify index `0`.
+
+```python
+arr = [1, 2, 3, 4, 5]
+del arr[0]
+print(arr)  # Output: [2, 3, 4, 5]
+```
+
+- **Explanation**: `del arr[0]` deletes the element at index `0` from the list.
+- **Time Complexity**: `O(n)` because it involves shifting the remaining elements.
+
+### 3. Using Slicing
+
+You can remove the first element by reassigning the list to a slice that excludes the first element.
+
+```python
+arr = [1, 2, 3, 4, 5]
+arr = arr[1:]
+print(arr)  # Output: [2, 3, 4, 5]
+```
+
+- **Explanation**: `arr[1:]` creates a new list that starts from the second element and assigns it back to `arr`.
+- **Time Complexity**: `O(n)` because slicing creates a new list with the remaining elements.
+
+### 4. Using `deque.popleft()` (if frequent removals are needed)
+
+If you need to frequently remove the first element, consider using `collections.deque`, which provides an efficient `popleft()` method.
+
+```python
+from collections import deque
+
+arr = deque([1, 2, 3, 4, 5])
+arr.popleft()
+print(arr)  # Output: deque([2, 3, 4, 5])
+```
+
+- **Explanation**: `popleft()` removes and returns the first element from the `deque`.
+- **Time Complexity**: `O(1)` because `deque` is optimized for fast appends and pops from both ends.
+
+### Summary:
+
+- **`arr.pop(0)`**: Removes the first element and returns it; `O(n)` complexity.
+- **`del arr[0]`**: Deletes the first element; `O(n)` complexity.
+- **`arr = arr[1:]`**: Creates a new list without the first element; `O(n)` complexity.
+- **`deque.popleft()`**: Efficient removal of the first element; `O(1)` complexity if using `deque`.
